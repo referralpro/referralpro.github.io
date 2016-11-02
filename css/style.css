@@ -222,6 +222,7 @@ input:focus, textarea:focus {
 .site-logo {
     display: inline-block;
     line-height: 80px;
+    font-size:20px;
 }
 
 #navigation .site-logo a, #navigation .site-logo a:hover, #navigation .site-logo a:focus, #navigation .site-logo a:before, #navigation .site-logo a:after {
@@ -840,8 +841,8 @@ section.blog-small .container, section.blog .container {
 }
 
 section .container, footer .container {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 section.portfolio {
@@ -1687,9 +1688,10 @@ div.content-box.big div.content-box-info p {
 }
 
 .team-member-role {
-    font-size: 13px;
+    font-size: 15px;
     margin-bottom: 10px;
-    color: #999;
+    color: #666;
+    line-height:25px;
 }
 
 .team-member-description p {
@@ -2127,7 +2129,7 @@ ol.commentlist, ol.commentlist li {
 }
 
 .blog-small .blog-entry-meta-author, .blog-small .blog-entry-meta-tags, .blog-small .blog-entry-meta-comments {
-    font-size:11px;
+    font-size: 20px;
 }
 
 /* Sidebar */
@@ -2613,4 +2615,39 @@ ol.commentlist li:first-child {
     .posts-block {
         padding-right: 30px !important;
     }
+}
+
+.company_logo{
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
+.company_website{
+  font-size:20px;
+}
+
+.login_cta{
+  text-align: center;
+  display: block;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 10px 10px;
+  background: #2dbe60;
+  border-radius: 20px;
+  color: white;
+  box-shadow:6px 6px 6px #999;
+}
+
+.login_cta:hover, .login_cta:focus, .login_cta:active{
+  text-decoration: none;
+  color: white;
+  box-shadow:1px 1px 1px #666;
+}
+
+#share-buttons img {
+width: 35px;
+padding: 5px;
+border: 0;
+box-shadow: 0;
+display: inline;
 }
