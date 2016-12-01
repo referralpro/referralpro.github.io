@@ -148,6 +148,8 @@ input:focus, textarea:focus {
     outline: 0;
 }
 
+
+
 .header_down_link{
   font-size: 80px;
   border:6px solid white;
@@ -221,8 +223,11 @@ input:focus, textarea:focus {
 
 .site-logo {
     display: inline-block;
-    line-height: 80px;
     font-size:20px;
+}
+
+.site-logo img{
+  width:250px;
 }
 
 #navigation .site-logo a, #navigation .site-logo a:hover, #navigation .site-logo a:focus, #navigation .site-logo a:before, #navigation .site-logo a:after {
@@ -596,18 +601,27 @@ ul.text-slide {
 }
 
 .is-sticky .navbar-custom {
-    background-color: white;
+    min-height: 20px;
+    padding: 10px 0px;
 }
 
 .navbar-custom {
-    background-color: #fff;
+    border-bottom: #f2982a 4px solid;
+    background-color: white;
     width: 100%;
     min-height: 80px;
     position: relative;
     border-radius: 0;
     margin-bottom: 0;
     z-index: 9999;
+    padding: 20px 0px;
 }
+
+
+.is-sticky .navbar-custom img{
+  width:120px;
+}
+
 
 .navbar-custom .navbar-nav > li > a {
     color: #566473;
@@ -759,7 +773,7 @@ nav a:focus {
 .sub-title h3 {
     font-size: 18px;
     line-height: 28px;
-    margin: 0 auto 70px;
+    margin: 0 auto 20px;
     max-width: 900px;
     text-transform: none;
 }
@@ -842,7 +856,6 @@ section.blog-small .container, section.blog .container {
 
 section .container, footer .container {
     padding-top: 60px;
-    padding-bottom: 60px;
 }
 
 section.portfolio {
@@ -1027,7 +1040,7 @@ div.content-box.big div.content-box-info p {
 }
 
 .contacts {
-    margin:50px 0px;
+    margin:10px 0px;
 }
 
 .parallax-layer {
@@ -2624,6 +2637,7 @@ ol.commentlist li:first-child {
 
 .company_website{
   font-size:20px;
+  padding-bottom:30px;
 }
 
 .login_cta{
@@ -2650,4 +2664,15 @@ padding: 5px;
 border: 0;
 box-shadow: 0;
 display: inline;
+}
+
+.contact-form .container{
+      padding-top: 0px;
+}
+
+.contact-form .container h2{
+      padding-bottom: 40px;
+}
+.contact-form .container{
+      padding-bottom: 40px;
 }

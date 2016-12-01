@@ -516,6 +516,107 @@ jQuery(document).ready(function(){
     });
 
 
+    function printLeaders(data) {
+
+    		var html_item = '';
+
+  		  $.each(data, function() {
+    			if(this.Business != ''){
+            html_item += '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 item wow fadeInLeft">';
+                  html_item += '<div class="team-member">';
+                        html_item += '<div class="team-member-holder">';
+                            html_item += '  <div class="team-member-image">';
+                                    html_item += '<img alt="" src="img/team/'+this.ProfilePic+'">';
+                                    html_item += '<div class="team-member-links">';
+                                          html_item += '<div class="team-member-links-list">';
+                                          if(this.LinkedIn != ''){
+                                            html_item += '<a target="_blank" class="linkedin team-member-links-item" href="http://'+this.LinkedIn+'"><i class="fa fa-linkedin"></i></a>';
+                                          }
+                                          if(this.Fblink != ''){
+                                            html_item += '<a target="_blank" class="facebook team-member-links-item" href="http://'+this.Fblink+'"><i class="fa fa-facebook"></i></a>';
+                                          }
+                                          html_item += '</div>';
+                                    html_item += '</div>';
+                              html_item += '</div>';
+                              html_item += '<div class="team-member-meta">';
+                                    html_item += '<h3 class="team-member-name">'+this.Name+'</h3>';
+                                    html_item += '<h4 class="team-member-name">'+this.ECRARole+'</h4>';
+                              html_item += '</div>';
+                        html_item += '</div>';
+                  html_item += '</div>';
+            html_item += '</div>';
+    			}
+    		});
+
+    		$('.leaders_row').html(html_item);
+
+    }
+
+    function printMembers(data) {
+        //Data is usable here
+        console.log(data);
+
+    		var html_item = '';
+
+  		  $.each(data, function() {
+    			if(this.Business != ''){
+            html_item += '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 item wow fadeInDown team-member-cont">';
+              html_item += '<div class="team-member">';
+                html_item += '<div class="team-member-holder">';
+                  html_item += '<div class="team-member-image">';
+                    html_item += '<img alt="" src="img/team/'+this.ProfilePic+'">';
+                    html_item += '<div class="team-member-links">';
+                      html_item += '<div class="team-member-links-list">';
+                        if(this.LinkedIn != ''){
+                          html_item += '<a target="_blank" class="linkedin team-member-links-item" href="http://'+this.LinkedIn+'"><i class="fa fa-linkedin"></i></a>';
+                        }
+                        if(this.Fblink != ''){
+                          html_item += '<a target="_blank" class="facebook team-member-links-item" href="http://'+this.Fblink+'"><i class="fa fa-facebook"></i></a>';
+                        }
+                      html_item += '</div>';
+                    html_item += '</div>';
+                  html_item += '</div>';
+                  html_item += '<div class="team-member-meta">';
+                    html_item += '<h4 class="team-member-name">'+this.Name+'</h4>';
+                    html_item += '<h4 class="team-member-name"><a href = "http://'+this.Website+'" target = "_blank">'+this.Business+'</a></h4>';
+                    html_item += '<h5 class="team-member-role">' + this.Vertical + '</br>';
+                      html_item += '<a href="tel:+1'+this.Phone+'">'+this.Phone+'</a><br />';
+                      html_item += '<a href="mailto:'+this.Email+'">'+this.Email+'</a>';
+                    html_item += '</h5>';
+                  html_item += '</div>';
+                html_item += '</div>';
+              html_item += '</div>';
+            html_item += '</div>';
+
+    			}
+    		});
+
+    		$('.members_row').html(html_item);
+        $(function() {
+            $('.row').each(function(i, elem) {
+                $(elem)
+                    .find('.team-member-cont')   // Only children of this row
+                    .matchHeight({   property: 'min-height',byRow: false });
+            });
+        });
+
+    }
+
+    function parseData(url, callBack) {
+        Papa.parse(url, {
+            download: true,
+            dynamicTyping: true,
+    				header:true,
+    				delimeter:"	",
+            complete: function(results) {
+                callBack(results.data);
+            }
+        });
+    }
+
+    parseData("csv/members.csv", printMembers);
+    parseData("csv/leaders.csv", printLeaders);
+
 
  /* ==============================================
 Firefox anchor fix
@@ -533,4 +634,5 @@ Firefox anchor fix
         }
 
     }
+
     });
